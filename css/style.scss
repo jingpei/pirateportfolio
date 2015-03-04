@@ -74,10 +74,15 @@ body {
 
 		.portfolio-image {
 			border-radius: 50%;
+			@media screen and (max-width: $break-two){
+				float: left;
+				top: -10px;
+			}
 		}
 
 		h1, h2 {
 			font-weight: normal;
+			
 		}
 
 		h1 {
@@ -99,6 +104,13 @@ body {
 .social {
 	width: 120px;
 	margin: 0 auto;
+
+	@media screen and (max-width: $break-two){
+		clear: both;
+		float: left;
+		margin: $margin;
+		top: -20px;
+	}
 
 	a {
 		float: left;
@@ -151,6 +163,9 @@ body {
 // searchbar
 .searchbar {
 	text-align: center;
+	@media screen and (max-width: $break-two){
+		display: none;
+	}
 }
 // left side menus
 .menus {
@@ -158,6 +173,12 @@ body {
 
 	@media screen and (min-width: $break-three) {
 		padding: $padding*2 $padding*3;
+	}
+
+	@media screen and (max-width: $break-two){
+		clear:both;
+		text-align: left;
+		margin-left: $margin;
 	}
 
 	h3 {
@@ -175,6 +196,10 @@ body {
 
 		@media screen and (min-width: $break-three) {
 			margin: $margin*2 0 $margin 0;
+		}
+
+		@media screen and (max-width: $break-two){
+			display: inline;
 		}
 
 		&:before {
