@@ -118,7 +118,8 @@ body {
         margin: 20px 0 10px 0; } }
     @media screen and (max-width: 520px) {
       .menus h3 {
-        display: inline; } }
+        display: inline;
+        margin: 10px; } }
     .menus h3:before {
       content: "";
       position: absolute;

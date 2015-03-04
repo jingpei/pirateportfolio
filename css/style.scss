@@ -200,6 +200,7 @@ body {
 
 		@media screen and (max-width: $break-two){
 			display: inline;
+			margin: $margin;
 		}
 
 		&:before {
