@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="initial-scale=1.0">
@@ -7,8 +7,16 @@
   <title>Drunken Pirate Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/modernizr.js"></script>
+  <script src="js/angular.js"></script>
 </head>
-<body>
+<body ng-init="portfolios = [
+    {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png' },
+
+    {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png' },
+    
+    {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
+    ]"
+    >
   <main class="wrap group">
 
 
@@ -19,15 +27,15 @@
        <h1>Cap'n Seymour Butts</h1>
        <h2>Experienced pirate and leader of the salty seamen operating in the Carribean and South Seas.</h2>
        <div class="social group">
-        <a href="#" class="dribbble">Dribbble</a>
-        <a href="#" class="poopy">Poopy</a>
-        <a href="#" class="facebook">Facebook</a>
-        <a href="#" class="github">Github</a>
+        <span aria-hidden="true" data-icon="&#xE000;"></span>
+        <span aria-hidden="true" data-icon="&#xE001;"></span>
+        <span aria-hidden="true" data-icon="&#xE002;"></span>
+        <span aria-hidden="true" data-icon="&#xE003;"></span>
       </div>
     </div>
 
     <div class="searchbar">
-      <input/>
+      <input ng-model="searchFor">
     </div>
 
     <nav class="menus">
@@ -58,20 +66,20 @@
 
 <div class="content">
 
-  <article class="portfolio-item group first">
+  <article class="portfolio-item group first" ng-repeat="portfolio in portfolios | filter:searchFor">
     <header class="portfolio-info">
-      <div class="title">Call of Booty</div>
-      <div class="date">7 Nov 2013</div>
+      <div class="title">{{ portfolio.title }}</div>
+      <div class="date">{{ portfolio.date }}</div>
       <div class="description">
-        Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.
+        {{ portfolio.description }}
       </div>
     </header>
     <figure class="portfolio-image">
-      <img src="images/drunkenPirate_thumb3.png" alt="Pirate Ship">
+      <img src="{{ portfolio.imageurl }}" alt="Pirate Ship">
     </figure>
   </article>
 
-  <article class="portfolio-item group">
+  <!--<article class="portfolio-item group">
     <header class="portfolio-info">
       <div class="title">The Sack of the Innocents</div>
       <div class="date">7 Nov 2013</div>
@@ -95,7 +103,7 @@
     <figure class="portfolio-image">
       <img src="images/drunkenPirate_thumb1.png" alt="Pipe and Mate">
     </figure>
-  </article>
+  </article>-->
 
   <article class="portfolio-item group loading-wrap" style="display:none">
     <header class="portfolio-info">
