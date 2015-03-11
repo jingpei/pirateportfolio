@@ -66,7 +66,7 @@
 
 <div class="content">
 
-  <article class="portfolio-item group first" ng-repeat="portfolio in portfolios | filter:searchFor">
+  <article class="portfolio-item group" ng-repeat="portfolio in portfolios | filter:searchFor" ng-class="'first':$first">
     <header class="portfolio-info">
       <div class="title">{{ portfolio.title }}</div>
       <div class="date">{{ portfolio.date | date : fullDate}}</div>
