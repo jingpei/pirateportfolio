@@ -7,16 +7,9 @@
   <title>Drunken Pirate Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/modernizr.js"></script>
-  <script src="js/angular.js"></script>
+  <script src="js/angular.min.js"></script>
 </head>
-<body ng-init="portfolios = [
-    {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png' },
-
-    {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png' },
-    
-    {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
-    ]"
-    >
+<body>
   <main class="wrap group">
 
 
@@ -64,9 +57,9 @@
 
 
 
-<div class="content">
+<div class="content" ng-controller="PortfolioListController">
 
-  <article class="portfolio-item group" ng-repeat="portfolio in portfolios | filter:searchFor" ng-class="'first':$first">
+  <article class="portfolio-item group" ng-repeat="portfolio in portfolios | filter:searchFor">
     <header class="portfolio-info">
       <div class="title">{{ portfolio.title }}</div>
       <div class="date">{{ portfolio.date | date : fullDate}}</div>
@@ -75,9 +68,20 @@
       </div>
     </header>
     <figure class="portfolio-image">
-      <img src="{{ portfolio.imageurl }}" alt="Pirate Ship">
+      <img ng-src="{{ portfolio.imageurl }}" alt="Pirate Ship">
     </figure>
   </article>
+
+  <!--<div>
+    <h3>Add a Portfolio</h3> 
+    <div class="form">
+      <form name="add_portfolio_form" novalidate>
+        <input name="title" type="text" placeholder="Title"/>
+        <input name="date" type="date" placeholder="Date"/>
+        <textarea name="description" rows="4" placeholder="Description"></textarea> 
+      </form>
+    </div>
+  </div>-->
 
   <!--<article class="portfolio-item group">
     <header class="portfolio-info">
@@ -103,7 +107,7 @@
     <figure class="portfolio-image">
       <img src="images/drunkenPirate_thumb1.png" alt="Pipe and Mate">
     </figure>
-  </article>-->
+  </article>
 
   <article class="portfolio-item group loading-wrap" style="display:none">
     <header class="portfolio-info">
@@ -113,10 +117,21 @@
         <img src="images/loading.png" alt="Loading" class="rotate">&nbsp;Loading...
       </div>
     </figure>
-  </article>
+  </article>-->
 
 </div>
 </main>
+<script>
+function PortfolioListController( $scope ){
+      $scope.portfolios = [
+      {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png' },
+      {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png' },
+      {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
+      ];  
+};
+
+
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="js/app.js"></script>
 </body>
