@@ -43,16 +43,25 @@ body {
   .sidebar .my-info {
     text-align: center;
     padding: 30px 0; }
+    @media screen and (max-width: 520px) {
+      .sidebar .my-info {
+        text-align: left;
+        min-height: 235px; } }
     .sidebar .my-info .portfolio-image {
       border-radius: 50%; }
       @media screen and (max-width: 520px) {
         .sidebar .my-info .portfolio-image {
           float: left;
-          top: -10px; } }
+          margin: 0 20px 10px 0; } }
     .sidebar .my-info h1, .sidebar .my-info h2 {
       font-weight: normal; }
     .sidebar .my-info h1 {
       font-size: 160%; }
+      @media screen and (max-width: 520px) {
+        .sidebar .my-info h1 {
+          font-size: 175%;
+          line-height: 28px;
+          margin-top: 25px; } }
     .sidebar .my-info h2 {
       font-size: 100%;
       padding: 0 10px; }
@@ -60,46 +69,33 @@ body {
 .social {
   width: 120px;
   margin: 0 auto; }
-  @media screen and (max-width: 520px) {
-    .social {
-      clear: both;
-      float: left;
-      margin: 10px;
-      top: -20px; } }
   .social span[data-icon]:before {
     font-family: pirateregular;
     content: attr(data-icon);
     speak: none;
-    /*font-weight: 400;*/
+    font-weight: 400;
     font-style: normal;
-    color: #f84545;
     font-size: 25px;
-    display: inline;
+    display: block;
+    line-height: 30px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
-    .social span[data-icon]:before:hover {
-      font-family: pirateregular;
-      content: attr(data-icon);
-      speak: none;
-      /*font-weight: 400;*/
-      font-style: normal;
-      color: #e1eef3;
-      font-size: 25px;
-      display: inline;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale; }
+  @media screen and (max-width: 520px) {
+    .social {
+      margin-left: 16px;
+      position: absolute;
+      top: 180px; } }
   .social a {
     float: left;
-    width: 25px;
-    height: 25px;
+    color: #f00;
+    text-decoration: none;
     margin: 0 2px;
-    /*background: url(images/social-media.png) no-repeat;*/
-    text-indent: -9999px;
-    /*@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
-    	background: url(images/social-media@2x.png) no-repeat;
-    	background-size: 101px 51px;
-    }*/
-    		/*&.dribbble {
+    		/*@media screen and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-pixel-ratio: 2) {
+    			background: url(images/social-media@2x.png) no-repeat;
+    			background-size: 101px 51px;
+    		}
+    
+    		&.dribbble {
     			background-position: 0px 0px;
     
     			&:hover {
@@ -131,6 +127,8 @@ body {
     				background-position: -75px -25px;
     			}
     		}*/ }
+  .social a:hover {
+    color: #28948c; }
 
 .searchbar {
   text-align: center; }

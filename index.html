@@ -27,10 +27,10 @@
        <h1>Cap'n Seymour Butts</h1>
        <h2>Experienced pirate and leader of the salty seamen operating in the Carribean and South Seas.</h2>
        <div class="social group">
-        <a><span aria-hidden="true" data-icon="&#xE000;"></span></a>
-        <a><span aria-hidden="true" data-icon="&#xE001;"></span></a>
-        <a><span aria-hidden="true" data-icon="&#xE002;"></span></a>
-        <a><span aria-hidden="true" data-icon="&#xE003;"></span></a>
+        <a href="#" title="Dribble"><span aria-hidden="true" data-icon="&#xE000;"></span></a>
+        <a href-"#" title="Poopy"><span aria-hidden="true" data-icon="&#xE001;"></span></a>
+        <a href="#" title="Facebook"><span aria-hidden="true" data-icon="&#xE002;"></span></a>
+        <a href="#" title="Github"><span aria-hidden="true" data-icon="&#xE003;"></span></a>
       </div>
     </div>
 
@@ -68,14 +68,18 @@
 
   <article class="portfolio-item group" ng-repeat="portfolio in portfolios | filter:searchFor" ng-class="'first':$first">
     <header class="portfolio-info">
-      <div class="title">{{ portfolio.title }}</div>
-      <div class="date">{{ portfolio.date | date : fullDate}}</div>
+      <div class="title">
+        {{ portfolio.title }}
+      </div>
+      <div class="date">
+        {{ portfolio.date | date : fullDate}}
+      </div>
       <div class="description">
         {{ portfolio.description }}
       </div>
     </header>
     <figure class="portfolio-image">
-      <img src="{{ portfolio.imageurl }}" alt="Pirate Ship">
+      <img src="{{ portfolio.imageurl }}" alt={{ portfolio.title }}>
     </figure>
   </article>
 
@@ -110,7 +114,7 @@
     </header>
     <figure class="portfolio-image">
       <div class="loading">
-        <img src="images/loading.png" alt="Loading" class="rotate">&nbsp;Loading...
+        <img ng-src="images/loading.png" alt="Loading" class="rotate">&nbsp;Loading...
       </div>
     </figure>
   </article>
