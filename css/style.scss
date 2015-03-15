@@ -434,6 +434,53 @@ ul {
 			}
 		}
 	}
+
+	.form-group{
+		background: $verylightgray;
+		border-top: 1px solid darken($verylightgray, 5%);	
+		width: 100%;
+		padding-bottom: $margin;
+
+		h3 {
+			text-align: center;
+		}
+	}
+
+	form{
+		width: 80%;
+		margin: auto;
+	}
+
+	input, textarea{
+
+		display: block;
+		margin: $margin auto;
+		padding: $padding/2;
+		border: 1px solid $gray;
+		width: 100%;
+		
+		-webkit-border-radius: 3px;
+		-moz-border-radius:3 px;
+		border-radius: 3px;
+	}
+	
+	.btn-add-portfolio{
+		width: 120px;
+		color: $white;
+		background-color: $strawberry;
+		border: none;
+		padding: $padding;
+		float: right;
+		right: 3px;
+
+		-webkit-border-radius:5px;
+		-moz-border-radius:5px;
+		border-radius: 5px;
+	}
+
+	.cl {
+		clear:both;
+	}
 }
 div.loading {
 	color: darken($gray, 20%);

@@ -294,6 +294,38 @@ ul {
     .content .portfolio-image div.loading img {
       width: auto;
       height: auto; }
+  .content .form-group {
+    background: #b2c6cd;
+    border-top: 1px solid #a3bbc3;
+    width: 100%;
+    padding-bottom: 10px; }
+    .content .form-group h3 {
+      text-align: center; }
+  .content form {
+    width: 80%;
+    margin: auto; }
+  .content input, .content textarea {
+    display: block;
+    margin: 10px auto;
+    padding: 5px;
+    border: 1px solid #f7f7f7;
+    width: 100%;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3 px;
+    border-radius: 3px; }
+  .content .btn-add-portfolio {
+    width: 120px;
+    color: #FFF;
+    background-color: #f84545;
+    border: none;
+    padding: 10px;
+    float: right;
+    right: 3px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px; }
+  .content .cl {
+    clear: both; }
 
 div.loading {
   color: #c4c4c4;
