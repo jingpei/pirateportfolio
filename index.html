@@ -79,9 +79,9 @@
         <input name="title" type="text" placeholder="Title" required ng-model="adding_portfolio.title"/>
         <input name="date" type="date" placeholder="Date" required ng-model="adding_portfolio.date"/>
         <textarea name="description" rows="8" placeholder="Description" required ng-model="adding_portfolio.description"></textarea>
-        <input name="url" type="text" placeholder="Image Url" required ng-model="adding_portfolio.imageurl"/>
+        <input name="url" type="url" placeholder="Image Url" ng-model="adding_portfolio.imageurl"/>
         <input name="name" type="text" placeholder="Name" required ng-model="adding_portfolio.name"/>
-        <button ng-click="addPortfolio(adding_portfolio)" required class="btn-add-portfolio">Add Portfolio</button>
+        <button ng-click="addPortfolio(adding_portfolio)" class="btn-add-portfolio">Add Portfolio</button>
       </form>
       <div class="cl"></div>
     </div>
@@ -136,6 +136,22 @@ function PortfolioListController( $scope ){
       ];  
 
       $scope.addPortfolio = function( new_portfolio ){
+        if (new_portfolio.title.$error){
+          $scope.adding_portfolio = {};
+          return;
+        }
+        else if (new_portfolio.date.$error){
+          $scope.adding_portfolio = {};
+          return;
+        }
+        else if (new_portfolio.description.$error){
+          $scope.adding_portfolio = {};
+          return;
+        }
+        else if (new_portfolio.name.$error){
+          $scope.adding_portfolio = {};
+          return;
+        };
         $scope.portfolios.push( new_portfolio );
         $scope.adding_portfolio = {};
       };
