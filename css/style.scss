@@ -439,7 +439,7 @@ ul {
 		background: $verylightgray;
 		border-top: 1px solid darken($verylightgray, 5%);	
 		width: 100%;
-		padding-bottom: $margin;
+		padding-bottom: $padding*5;
 
 		h3 {
 			text-align: center;
@@ -452,18 +452,36 @@ ul {
 	}
 
 	input, textarea{
-
 		display: block;
 		margin: $margin auto;
 		padding: $padding/2;
 		border: 1px solid $gray;
 		width: 100%;
-		
+
 		-webkit-border-radius: 3px;
-		-moz-border-radius:3 px;
+		-moz-border-radius:3px;
 		border-radius: 3px;
+
+		-webkit-transition: all 0.5s ease-in-out;
+		-moz-transition: all 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;
 	}
-	
+
+
+	input:focus, textarea:focus {
+		-webkit-box-shadow:0 0 25px #ccc;
+		-moz-box-shadow:0 0 25px #ccc;
+		box-shadow:0 0 25px #ccc;
+
+		-webkit-transform: scale(1.01);
+		-moz-transform: scale(1.01);
+		transform: scale(1.01);
+			
+		-webkit-outline-color: $strawberry;
+		-webkit-outline-color: 3px;
+		outline-color: $strawberry;
+		outline-width: 3px;
+	}	
 	.btn-add-portfolio{
 		width: 120px;
 		color: $white;

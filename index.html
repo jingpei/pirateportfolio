@@ -75,13 +75,13 @@
   <div class="form-group">
     <h3>Add a Portfolio</h3>
     <div class="form">
-      <form name="add_portfolio_form" novalidate>
-        <input name="title" type="text" placeholder="Title" ng-model="adding_portfolio.title"/>
-        <input name="date" type="date" placeholder="Date" ng-model="adding_portfolio.date"/>
-        <textarea name="description" rows="8" placeholder="Description" ng-model="adding_portfolio.description"></textarea> 
-        <input name="url" type="text" placeholder="Image Url" size="10" ng-model="adding_portfolio.imageurl"/>
-        <input name="name" type="text" placeholder="Name" size="10" ng-model="adding_portfolio.name"/>
-        <button ng-click="addPortfolio(adding_portfolio)" class="btn-add-portfolio">Add Portfolio</button>
+      <form name="add_portfolio_form">
+        <input name="title" type="text" placeholder="Title" required ng-model="adding_portfolio.title"/>
+        <input name="date" type="date" placeholder="Date" required ng-model="adding_portfolio.date"/>
+        <textarea name="description" rows="8" placeholder="Description" required ng-model="adding_portfolio.description"></textarea>
+        <input name="url" type="text" placeholder="Image Url" required ng-model="adding_portfolio.imageurl"/>
+        <input name="name" type="text" placeholder="Name" required ng-model="adding_portfolio.name"/>
+        <button ng-click="addPortfolio(adding_portfolio)" required class="btn-add-portfolio">Add Portfolio</button>
       </form>
       <div class="cl"></div>
     </div>
@@ -140,7 +140,6 @@ function PortfolioListController( $scope ){
         $scope.adding_portfolio = {};
       };
 };
-
 
 </script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
