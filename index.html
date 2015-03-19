@@ -7,16 +7,9 @@
   <title>Drunken Pirate Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/modernizr.js"></script>
-  <script src="js/angular.js"></script>
+  <script src="js/angular.min.js"></script>
 </head>
-<body ng-init="portfolios = [
-    {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png' },
-
-    {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png' },
-    
-    {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
-    ]"
-    >
+<body>
   <main class="wrap group">
 
 
@@ -64,9 +57,9 @@
 
 
 
-<div class="content">
+<div class="content" ng-controller="PortfolioListController">
 
-  <article class="portfolio-item group" ng-repeat="portfolio in portfolios | filter:searchFor" ng-class="'first':$first">
+  <article class="portfolio-item group" ng-repeat="portfolio in portfolios | filter:searchFor">
     <header class="portfolio-info">
       <div class="title">
         {{ portfolio.title }}
@@ -79,9 +72,26 @@
       </div>
     </header>
     <figure class="portfolio-image">
-      <img src="{{ portfolio.imageurl }}" alt={{ portfolio.title }}>
+      <img ng-src="{{ portfolio.imageurl }}" alt={{ portfolio.title }}>
     </figure>
   </article>
+
+  <div class="form-group">
+    <h3>Add a Portfolio</h3>
+    <div class="form">
+      <form name="add_portfolio_form">
+        <input name="title" type="text" placeholder="Title" required ng-model="adding_portfolio.title"/>
+        <input name="date" type="date" placeholder="Date" required ng-model="adding_portfolio.date"/>
+        <textarea name="description" rows="8" placeholder="Description" required ng-model="adding_portfolio.description"></textarea>
+        <input name="url" type="url" placeholder="Image Url" ng-model="adding_portfolio.imageurl"/>
+        <input name="name" type="text" placeholder="Name" required ng-model="adding_portfolio.name"/>
+        <button ng-click="addPortfolio(adding_portfolio)" class="btn-add-portfolio">Add Portfolio</button>
+      </form>
+      <div class="cl"></div>
+    </div>
+  </div>
+
+
 
   <!--<article class="portfolio-item group">
     <header class="portfolio-info">
@@ -107,7 +117,7 @@
     <figure class="portfolio-image">
       <img src="images/drunkenPirate_thumb1.png" alt="Pipe and Mate">
     </figure>
-  </article>-->
+  </article>
 
   <article class="portfolio-item group loading-wrap" style="display:none">
     <header class="portfolio-info">
@@ -117,10 +127,41 @@
         <img ng-src="images/loading.png" alt="Loading" class="rotate">&nbsp;Loading...
       </div>
     </figure>
-  </article>
+  </article>-->
 
 </div>
 </main>
+<script>
+function PortfolioListController( $scope ){
+      $scope.portfolios = [
+      {name: 'vessel1309', title: 'Call of Booty', date: '2013-09-01', description: 'Arrrgh mateys! This be the finest vessel sailing these seas that yer eyes ever laid sight on. Arrrgh.', imageurl: 'images/drunkenPirate_thumb3.png' },
+      {name: 'innocents1404', title: 'The Sack of the Innocents', date: '2014-04-15', description: 'This be a detail of the sacking of the innocents where I played an important role as business analyst and in implementation.', imageurl: 'images/drunkenPirate_thumb2.png' },
+      {name: 'firstmate1210', title: 'Pipe and First Mate', date: '2012-10-01', description: 'After a hard day of lootin\' and shootin\' I like to relax with my best mates and tally up the days booty.', imageurl: 'images/drunkenPirate_thumb1.png' }
+      ];  
+
+      $scope.addPortfolio = function( new_portfolio ){
+        if (new_portfolio.title.$error){
+          $scope.adding_portfolio = {};
+          return;
+        }
+        else if (new_portfolio.date.$error){
+          $scope.adding_portfolio = {};
+          return;
+        }
+        else if (new_portfolio.description.$error){
+          $scope.adding_portfolio = {};
+          return;
+        }
+        else if (new_portfolio.name.$error){
+          $scope.adding_portfolio = {};
+          return;
+        };
+        $scope.portfolios.push( new_portfolio );
+        $scope.adding_portfolio = {};
+      };
+};
+
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script src="js/app.js"></script>
 </body>
