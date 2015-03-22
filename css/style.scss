@@ -564,17 +564,23 @@ div.loading {
 }
 
 .pagenotfound {
-	width: 80%;
-	margin: $margin*6 auto;
+	//width: 80%;
+	margin: $margin*3 auto;
 
 	.error-image {
 		display: block;
+		width: $break-one;
 		margin: 0 auto;
 	}
 
 	h3, p, a {
 		display:block;
+		font-family: $font-family;
 		width: 100%;
 		text-align: center;
+	}
+
+	a{
+		margin-top: $margin*2;
 	}
 }

@@ -384,14 +384,17 @@ div.loading {
     -ms-transform-origin: center center;
     transform-origin: center center; } }
 .pagenotfound {
-  width: 80%;
-  margin: 60px auto; }
+  margin: 30px auto; }
   .pagenotfound .error-image {
     display: block;
+    width: 360px;
     margin: 0 auto; }
   .pagenotfound h3, .pagenotfound p, .pagenotfound a {
     display: block;
+    font-family: "Source Sans Pro", sans-serif;
     width: 100%;
     text-align: center; }
+  .pagenotfound a {
+    margin-top: 20px; }
 
 /*# sourceMappingURL=style.css.map */
