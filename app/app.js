@@ -8,7 +8,7 @@ portfolioApp.config(function($routeProvider){
 		.otherwise({ redirectTo: "/404_page" });
 });
 
-portfolioApp.controller("PortfolioListController", function( $scope ){
+/*portfolioApp.controller("PortfolioListController", function( $scope ){
 
     //initialize scope variables
     $scope.new_portfolio = {};
@@ -27,7 +27,7 @@ portfolioApp.controller("PortfolioListController", function( $scope ){
       else if(!new_portfolio.title){
         $scope.add_portfolio_error = "Missing title";
       }
-      else if (!new_portfolio.date){
+      else if (!new_portfolio.date || !is_valid_date(new_portfolio.date)){
         $scope.add_portfolio_error = "You must provide a date in format yyyy/mm/dd";
       }
       else if (!new_portfolio.description){
@@ -42,4 +42,7 @@ portfolioApp.controller("PortfolioListController", function( $scope ){
         $scope.add_portfolio_error = "";
       };
     };
-  });
+
+
+
+  });*/ 

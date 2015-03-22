@@ -302,6 +302,15 @@ ul {
   .content form {
     width: 80%;
     margin: auto; }
+  .content .form-error {
+    width: 80%;
+    margin: 0 auto;
+    padding: 5px;
+    background: #f84545;
+    color: #FFF;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px; }
   .content input, .content textarea {
     display: block;
     margin: 10px auto;
@@ -374,5 +383,15 @@ div.loading {
     -webkit-transform-origin: center center;
     -ms-transform-origin: center center;
     transform-origin: center center; } }
+.pagenotfound {
+  width: 80%;
+  margin: 60px auto; }
+  .pagenotfound .error-image {
+    display: block;
+    margin: 0 auto; }
+  .pagenotfound h3, .pagenotfound p, .pagenotfound a {
+    display: block;
+    width: 100%;
+    text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

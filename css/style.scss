@@ -454,6 +454,18 @@ ul {
 		margin: auto;
 	}
 
+	.form-error{
+		width: 80%;
+		margin: 0 auto;
+		padding: $padding/2;
+		background: $strawberry;
+		color: $white;
+
+		-webkit-border-radius: 3px;
+		-moz-border-radius:3px;
+		border-radius: 3px;
+	}
+
 	input, textarea{
 		display: block;
 		margin: $margin auto;
@@ -548,5 +560,21 @@ div.loading {
 			-ms-transform-origin: center center;
 			transform-origin: center center;
 		}
+	}
+}
+
+.pagenotfound {
+	width: 80%;
+	margin: $margin*6 auto;
+
+	.error-image {
+		display: block;
+		margin: 0 auto;
+	}
+
+	h3, p, a {
+		display:block;
+		width: 100%;
+		text-align: center;
 	}
 }

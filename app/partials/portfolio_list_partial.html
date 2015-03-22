@@ -63,10 +63,10 @@
 
   <div class="form-group">
     <h3>Add a Portfolio</h3>
-    <div class="form-error" ng-show="add_portfolio_error != ''">
-      {{ add_portfolio_error }}
-    </div>
     <div class="form">
+      <div class="form-error" ng-show="add_portfolio_error != ''">
+        Error : {{ add_portfolio_error }}
+      </div>
       <form name="add_portfolio_form" novalidate>
         <input name="title" type="text" placeholder="Title" required ng-model="adding_portfolio.title"/>
         <input name="date" type="date" placeholder="Date" required ng-model="adding_portfolio.date"/>
