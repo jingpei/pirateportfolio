@@ -1,44 +1,46 @@
- <main class="wrap group">
-  <aside class="sidebar">
-   <div class="my-info">
-     <img src="images/drunkenPirate_avatar.png" alt="drunken pirate" class="portfolio-image">
-     <h1>Cap'n Seymour Butts</h1>
-     <h2>Experienced pirate and leader of the salty seamen operating in the Carribean and South Seas.</h2>
-     <div class="social group">
-      <a href="#" title="Dribble"><span aria-hidden="true" data-icon="&#xE000;"></span></a>
-      <a href-"#" title="Poopy"><span aria-hidden="true" data-icon="&#xE001;"></span></a>
-      <a href="#" title="Facebook"><span aria-hidden="true" data-icon="&#xE002;"></span></a>
-      <a href="#" title="Github"><span aria-hidden="true" data-icon="&#xE003;"></span></a>
+  <main class="wrap group">
+    <aside class="sidebar">
+     <div class="my-info">
+       <img src="images/drunkenPirate_avatar.png" alt="drunken pirate" class="portfolio-image">
+       <h1>Cap'n Seymour Butts</h1>
+       <h2>Experienced pirate and leader of the salty seamen operating in the Carribean and South Seas.</h2>
+       <div class="social group">
+        <a href="#" title="Dribble"><span aria-hidden="true" data-icon="&#xE000;"></span></a>
+        <a href-"#" title="Poopy"><span aria-hidden="true" data-icon="&#xE001;"></span></a>
+        <a href="#" title="Facebook"><span aria-hidden="true" data-icon="&#xE002;"></span></a>
+        <a href="#" title="Github"><span aria-hidden="true" data-icon="&#xE003;"></span></a>
+      </div>
     </div>
-  </div>
 
-  <div class="searchbar">
-    <input ng-model="searchFor">
-  </div>
+    <div class="searchbar">
+      <input ng-model="searchFor">
+    </div>
 
-  <nav class="menus">
-   <h3 class="work">Work</h3>
-   <ul>
-    <li><a href="#" class="current-menu-item">Call of Booty</a></li>
-    <li><a href="#">The Sack of the Innocents</a></li>
-    <li><a href="#">Pipe and First Mate</a></li>
-  </ul>
+    <nav class="menus">
+     <h3 class="work">Work</h3>
+     <ul>
+      <li><a href="#" class="current-menu-item">Call of Booty</a></li>
+      <li><a href="#">The Sack of the Innocents</a></li>
+      <li><a href="#">Pipe and First Mate</a></li>
+    </ul>
 
-  <h3 class="about">About</h3>
-  <ul>
-    <li><a href="#">Skills</a></li>
-    <li><a href="#">Experience</a></li>
-    <li><a href="#">Testimonials</a></li>
-  </ul>
+    <h3 class="about">About</h3>
+    <ul>
+      <li><a href="#">Skills</a></li>
+      <li><a href="#">Experience</a></li>
+      <li><a href="#">Testimonials</a></li>
+    </ul>
 
-  <h3 class="contact">Contact</h3>
-  <ul>
-    <li><a href="#">Address</a></li>
-    <li><a href="#">Phone</a></li>
-    <li><a href="#">Social Networks</a></li>
-  </ul>
-</nav>
+    <h3 class="contact">Contact</h3>
+    <ul>
+      <li><a href="#">Address</a></li>
+      <li><a href="#">Phone</a></li>
+      <li><a href="#">Social Networks</a></li>
+    </ul>
+  </nav>
 </aside>
+
+
 
 <div class="content">
 
@@ -55,14 +57,17 @@
       </div>
     </header>
     <figure class="portfolio-image">
-      <img ng-src="{{ portfolio.imageurl }}" alt={{ portfolio.title }}>
+      <img ng-src="{{ portfolio.imageurl }}" alt="{{ portfolio.title }}">
     </figure>
   </article>
 
   <div class="form-group">
     <h3>Add a Portfolio</h3>
+    <div class="form-error" ng-show="add_portfolio_error != ''">
+      {{ add_portfolio_error }}
+    </div>
     <div class="form">
-      <form name="add_portfolio_form">
+      <form name="add_portfolio_form" novalidate>
         <input name="title" type="text" placeholder="Title" required ng-model="adding_portfolio.title"/>
         <input name="date" type="date" placeholder="Date" required ng-model="adding_portfolio.date"/>
         <textarea name="description" rows="8" placeholder="Description" required ng-model="adding_portfolio.description"></textarea>
@@ -73,5 +78,6 @@
       <div class="cl"></div>
     </div>
   </div>
+
 </div>
 </main>
