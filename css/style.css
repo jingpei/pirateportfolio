@@ -400,4 +400,9 @@ div.loading {
 pre {
   font-family: "Source Sans Pro", sans-serif; }
 
+.single-portfolio {
+  background: #e1eef3;
+  margin: 0;
+  padding: 20px; }
+
 /*# sourceMappingURL=style.css.map */
