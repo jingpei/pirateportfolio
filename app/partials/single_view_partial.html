@@ -42,13 +42,16 @@
 
 
 
-<div class="content">
+<div class="content">  
 
+  <div class="name-error" ng-show="error_message">
+      {{ error_message }}
+  </div>
+
+  <h3 class="single-portfolio">Ye best beware peekin at the portfolios of {{ portfolio_name }}</h3> 
+  
   <article class="portfolio-item group" ng-repeat="portfolio in portfolios | filter:searchFor">
     <header class="portfolio-info">
-      <div class="title">
-        <a href="#/portfolio/{{ portfolio.name }}">{{ portfolio.title }}</a>
-      </div>
       <div class="date">
         {{ portfolio.date | date : fullDate}}
       </div>
@@ -57,27 +60,9 @@
       </div>
     </header>
     <figure class="portfolio-image">
-      <img ng-src="{{ portfolio.imageurl }}" alt="{{ portfolio.title }}">
+      <img ng-src="/media/{{portfolio_name}}/full/{{ portfolio.filename }}" alt="{{ portfolio.filename }}">
     </figure>
   </article>
-
-  <div class="form-group">
-    <h3>Add a Portfolio</h3>
-    <div class="form">
-      <div class="form-error" ng-show="add_portfolio_error != ''">
-        Error : {{ add_portfolio_error }}
-      </div>
-      <form name="add_portfolio_form" novalidate>
-        <input name="title" type="text" placeholder="Title" required ng-model="adding_portfolio.title"/>
-        <input name="date" type="date" placeholder="Date" required ng-model="adding_portfolio.date"/>
-        <textarea name="description" rows="8" placeholder="Description" required ng-model="adding_portfolio.description"></textarea>
-        <input name="url" type="url" placeholder="Image Url" ng-model="adding_portfolio.imageurl"/>
-        <input name="name" type="text" placeholder="Name" required ng-model="adding_portfolio.name"/>
-        <button ng-click="addPortfolio(adding_portfolio)" class="btn-add-portfolio">Add Portfolio</button>
-      </form>
-      <div class="cl"></div>
-    </div>
-  </div>
 
 </div>
 </main>

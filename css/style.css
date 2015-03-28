@@ -397,4 +397,9 @@ div.loading {
   .pagenotfound a {
     margin-top: 20px; }
 
+.single-portfolio {
+  background: #e1eef3;
+  margin: 0;
+  padding: 20px; }
+
 /*# sourceMappingURL=style.css.map */
